@@ -316,7 +316,7 @@ DOM = BEM.decl('i-bem__dom',/** @lends BEMDOM.prototype */{
      * @returns {BEMDOM}
      */
     findBlockOutside : function(elem, block) {
-        return this._findBlocks('closest', elem, block)[0] || null;
+        return this._findBlocks('parents', elem, block, true);
     },
 
     /**
@@ -355,7 +355,7 @@ DOM = BEM.decl('i-bem__dom',/** @lends BEMDOM.prototype */{
                     buildClass(blockName) :
                     buildClass(blockName, block.modName, block.modVal)) +
                 (onlyFirst? ':first' : ''),
-            domElems = ctxElem.filter(selector);
+            domElems = select === 'parents'? $() : ctxElem.filter(selector);
 
         select && (domElems = domElems.add(ctxElem[select](selector)));
 
