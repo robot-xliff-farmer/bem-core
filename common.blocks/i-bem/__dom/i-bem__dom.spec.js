@@ -436,7 +436,7 @@ describe('i-bem__dom', function() {
         });
 
         it('should find all outside blocks by name', function() {
-            getBlockIds(ctx1.findBlocksOutside('b1')).should.be.eql(['1', '2']);
+            getBlockIds(ctx1.findBlocksOutside('b1')).should.be.eql(['2', '1']);
         });
 
         it('should find all outside blocks by name, modName and modVal', function() {
@@ -445,7 +445,7 @@ describe('i-bem__dom', function() {
         });
 
         it('should find all outside blocks excepting self by name', function() {
-            getBlockIds(ctx2.findBlocksOutside('b1')).should.be.eql(['1', '2']);
+            getBlockIds(ctx2.findBlocksOutside('b1')).should.be.eql(['2', '1']);
         });
 
         it('should find all outside blocks excepting self by name, modName and modVal', function() {
@@ -454,7 +454,7 @@ describe('i-bem__dom', function() {
         });
 
         it('should find all outside blocks excepting mixed by name', function() {
-            getBlockIds(ctx3.findBlocksOutside('b1')).should.be.eql(['1', '2']);
+            getBlockIds(ctx3.findBlocksOutside('b1')).should.be.eql(['2', '1']);
         });
 
         it('should find all outside blocks excepting mixed by name, modName and modVal', function() {

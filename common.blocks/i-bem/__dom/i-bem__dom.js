@@ -355,9 +355,11 @@ DOM = BEM.decl('i-bem__dom',/** @lends BEMDOM.prototype */{
                     buildClass(blockName) :
                     buildClass(blockName, block.modName, block.modVal)) +
                 (onlyFirst? ':first' : ''),
-            domElems = select === 'parents'? $() : ctxElem.filter(selector);
-
-        select && (domElems = domElems.add(ctxElem[select](selector)));
+            filtered = select !== 'parents' && ctxElem.filter(selector),
+            selected = select && ctxElem[select](selector),
+            domElems = filtered?
+                (selected? filtered.add(selected) : filtered) :
+                selected;
 
         if(onlyFirst) {
             return domElems[0]? initBlock(blockName, domElems.eq(0), undef, true)._init() : null;
