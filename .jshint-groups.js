@@ -32,6 +32,8 @@ module.exports = {
             excludes : [
                 '**/*.bem/*.js',
                 '**/*.i18n/*.js',
+                '**/*.i18n.js',
+                '**/i18n.test.js',
                 '**/*.bemjson.js',
                 '**/*.deps.js',
                 '**/*.node.js',
@@ -68,14 +70,14 @@ module.exports = {
             },
             includes : [
                 '*.bundles/**/*.bemjson.js',
-                '**/*.examples/**/*.bemjson.js',
-                '**/*.doc-examples/**/*.bemjson.js',
                 '**/*.tests/**/*.bemjson.js'
             ],
-            excudes : [
+            excludes : [
                 '**/.bem/**/*',
                 '*.tests/**/*',
                 '*.specs/**/*',
+                '**/*.examples/**/*.bemjson.js',
+                '**/*.doc-examples/**/*.bemjson.js',
                 'libs/**/*',
                 'node_modules/**/*'
             ]
